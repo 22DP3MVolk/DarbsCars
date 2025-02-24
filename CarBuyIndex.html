@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EnRuLv - Mašīnu tirgus</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    body.dark {
+      background-color: #1e1e2f;
+      color: #e4e4f5;
+    }
+    .header {
+      background-color: #007bff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+    .nav {
+      display: flex;
+      justify-content: space-around;
+      background-color: #333;
+      padding: 10px;
+    }
+    .nav a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+    }
+    .nav a:hover {
+      background-color: #575757;
+      border-radius: 5px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin: 20px 0;
+      text-align: center;
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+    body.dark .card {
+      background: #2c2c3a;
+      color: #e4e4f5;
+    }
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+    .button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+      display: inline-block;
+      margin: 10px 0;
+    }
+    .button:hover {
+      background: #0056b3;
+    }
+    .footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    .hidden {
+      display: none;
+    }
+    .auth-container {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+    body.dark .auth-container {
+      background: #2c2c3a;
+      color: #e4e4f5;
+    }
+    .auth-container h2 {
+      text-align: center;
+    }
+    .auth-container input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .auth-container button {
+      width: 100%;
+    }
+    .auth-container .switch {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .auth-container .switch a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    .auth-container .switch a:hover {
+      text-decoration: underline;
+    }
+    .theme-switcher {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .theme-switcher:hover {
+      background: #0056b3;
+    }
+    .user-info {
+      position: absolute;
+      top: 20px;
+      right: 150px;
+      color: white;
+    }
+    .logout-button {
+      background: #ff4d4d;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+    .logout-button:hover {
+      background: #cc0000;
+    }
+    .purchased-cars {
+      margin-top: 20px;
+    }
+    .purchased-cars h2 {
+      text-align: center;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const loginForm = document.getElementById('loginForm');
+      const signupForm = document.getElementById('signupForm');
+      const showSignup = document.getElementById('showSignup');
+      const showLogin = document.getElementById('showLogin');
+      const loginEmail = document.getElementById('loginEmail');
+      const loginPassword = document.getElementById('loginPassword');
+      const signupEmail = document.getElementById('signupEmail');
+      const signupPassword = document.getElementById('signupPassword');
+      const errorMessage = document.getElementById('errorMessage');
+      const themeSwitcher = document.getElementById('themeSwitcher');
+      const loginLink = document.getElementById('loginLink');
+      const logoutButton = document.getElementById('logoutButton');
+      const userInfo = document.getElementById('userInfo');
+
+      // Проверка темы
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark') {
+        document.body.classList.add('dark');
+        themeSwitcher.textContent = 'Gaišā tēma';
+      } else {
+        themeSwitcher.textContent = 'Tumšā tēma';
+      }
+
+      // Проверка авторизации
+      const isAuthenticated = localStorage.getItem('isAuthenticated') === 'true';
+      const userEmail = localStorage.getItem('userEmail');
+
+      if (isAuthenticated && userEmail) {
+        userInfo.textContent = `Pieslēdzies: ${userEmail}`;
+        userInfo.classList.remove('hidden');
+        logoutButton.classList.remove('hidden');
+        document.getElementById('authContainer').classList.add('hidden');
+        document.getElementById('carPage').classList.remove('hidden');
+      } else {
+        document.getElementById('authContainer').classList.remove('hidden');
+      }
+
+      showSignup.addEventListener('click', function(e) {
+        e.preventDefault();
+        loginForm.classList.add('hidden');
+        signupForm.classList.remove('hidden');
+      });
+
+      showLogin.addEventListener('click', function(e) {
+        e.preventDefault();
+        signupForm.classList.add('hidden');
+        loginForm.classList.remove('hidden');
+      });
+
+      signupForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = signupEmail.value;
+        const password = signupPassword.value;
+        if (!email.includes('@') || password.length < 6) {
+          errorMessage.textContent = 'Nepareizs e-pasts vai parole (vismaz 6 simboli)';
+          return;
+        }
+        localStorage.setItem('userEmail', email);
+        localStorage.setItem('userPassword', password);
+        localStorage.setItem('isAuthenticated', 'true');
+        location.reload();
+      });
+
+      loginForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = loginEmail.value;
+        const password = loginPassword.value;
+        if (email === localStorage.getItem('userEmail') && password === localStorage.getItem('userPassword')) {
+          localStorage.setItem('isAuthenticated', 'true');
+          location.reload();
+        } else {
+          errorMessage.textContent = 'Nepareizs e-pasts vai parole';
+        }
+      });
+
+      // Переключение темы
+      themeSwitcher.addEventListener('click', function() {
+        document.body.classList.toggle('dark');
+        if (document.body.classList.contains('dark')) {
+          localStorage.setItem('theme', 'dark');
+          themeSwitcher.textContent = 'Gaišā tēma';
+        } else {
+          localStorage.setItem('theme', 'light');
+          themeSwitcher.textContent = 'Tumšā tēma';
+        }
+      });
+
+      // Выход из аккаунта
+      logoutButton.addEventListener('click', function() {
+        localStorage.removeItem('userEmail');
+        localStorage.removeItem('userPassword');
+        localStorage.removeItem('isAuthenticated');
+        location.reload();
+      });
+
+      // Открытие формы входа при нажатии на "Login" в навигации
+      loginLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('authContainer').classList.remove('hidden');
+        loginForm.classList.remove('hidden');
+        signupForm.classList.add('hidden');
+      });
+
+      // Функция покупки машины
+      document.querySelectorAll('.buy-button').forEach(button => {
+        button.addEventListener('click', function() {
+          const carCard = button.closest('.card');
+          const carName = carCard.querySelector('h3').textContent;
+          const carImage = carCard.querySelector('img').src;
+          const carPrice = carCard.querySelector('p').textContent;
+
+          const purchasedCarsSection = document.getElementById('purchasedCars');
+          const newCarCard = document.createElement('div');
+          newCarCard.classList.add('card');
+          newCarCard.innerHTML = `
+            <img src="${carImage}" alt="${carName}">
+            <h3>${carName}</h3>
+            <p>${carPrice}</p>
+          `;
+          purchasedCarsSection.appendChild(newCarCard);
+          purchasedCarsSection.classList.remove('hidden');
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <!-- Шапка сайта -->
+  <div class="header">
+    <h1>EnRuLv - Mašīnu tirgus</h1>
+    <div id="userInfo" class="user-info hidden"></div>
+    <button id="themeSwitcher" class="theme-switcher">Tumšā tēma</button>
+    <button id="logoutButton" class="logout-button hidden">Logout</button>
+  </div>
+
+  <!-- Навигационное меню -->
+  <div class="nav">
+    <a href="sakumlapa.html">Sākumlapa</a>
+    <a href="informacija.html">Informācija</a>
+    <a href="meklet.html">Meklēt</a>
+    <a href="pardod.html">Pārdod</a>
+    <a href="#" id="loginLink">Login</a>
+  </div>
+
+  <!-- Контейнер для авторизации -->
+  <div id="authContainer" class="auth-container hidden">
+    <form id="loginForm">
+      <h2>Pieslēgties</h2>
+      <input type="email" id="loginEmail" placeholder="E-pasts" required>
+      <input type="password" id="loginPassword" placeholder="Parole" required>
+      <p id="errorMessage" class="error"></p>
+      <button type="submit" class="button">Pieslēgties</button>
+      <div class="switch">
+        <a href="#" id="showSignup">Nav konta? Reģistrējieties</a>
+      </div>
+    </form>
+
+    <form id="signupForm" class="hidden">
+      <h2>Reģistrācija</h2>
+      <input type="email" id="signupEmail" placeholder="E-pasts" required>
+      <input type="password" id="signupPassword" placeholder="Parole (vismaz 6 simboli)" required>
+      <p id="signupErrorMessage" class="error"></p>
+      <button type="submit" class="button">Reģistrēties</button>
+      <div class="switch">
+        <a href="#" id="showLogin">Jau ir konts? Pieslēdzieties</a>
+      </div>
+    </form>
+  </div>
+
+  <!-- Основной контент -->
+  <div id="carPage" class="container hidden">
+    <div class="card">
+      <h2>Meklēt mašīnas</h2>
+      <p>Atrodiet savu ideālo mašīnu mūsu plašajā katalogā.</p>
+      <button class="button">Meklēt</button>
+    </div>
+
+    <div class="card">
+      <h2>Pārdod mašīnu</h2>
+      <p>Pievienojiet savu mašīnu mūsu tirgum un atrodiet pircēju.</p>
+      <button class="button">Pārdod</button>
+    </div>
+
+    <!-- Примеры машин -->
+    <div class="card">
+      <img src="https://via.placeholder.com/400x200" alt="BMW X5">
+      <h3>BMW X5</h3>
+      <p>Цена: 30,000€</p>
+      <button class="button buy-button">Pirkt</button>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/400x200" alt="Audi A6">
+      <h3>Audi A6</h3>
+      <p>Цена: 25,000€</p>
+      <button class="button buy-button">Pirkt</button>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/400x200" alt="Volkswagen Golf">
+      <h3>Volkswagen Golf</h3>
+      <p>Цена: 20,000€</p>
+      <button class="button buy-button">Pirkt</button>
+    </div>
+
+    <!-- Секция купленных машин -->
+    <div id="purchasedCars" class="purchased-cars hidden">
+      <h2>Jūsu iegādātās mašīnas</h2>
+    </div>
+  </div>
+
+  <!-- Подвал сайта -->
+  <div class="footer">
+    <p>&copy; 2023 EnRuLv - Mašīnu tirgus. Visas tiesības aizsargātas.</p>
+  </div>
+</body>
+</html>
