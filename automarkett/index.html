@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoMarkeTT - Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/automarkett/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/automarkett/index.html" class="text-2xl font-bold">AutoMarkeTT</a>
+    <div class="menu-btn">×</div>
+    <nav class="nav-links">
+      <a href="/automarkett/index.html">Home</a>
+      <a href="/automarkett/buy.html">Buy</a>
+      <a href="/automarkett/pardot.html">Sell</a>
+      <a href="/automarkett/about.html">About</a>
+      <div class="dropdown language-switch">
+        <a href="#">EN</a>
+        <div class="dropdown-content">
+          <a href="#" data-lang="en">English</a>
+          <a href="#" data-lang="ru">Русский</a>
+          <a href="#" data-lang="lv">Latviešu</a>
+        </div>
+      </div>
+      <div class="dropdown theme-switch">
+        <a href="#">Light Theme</a>
+        <div class="dropdown-content">
+          <a href="#" data-theme="light">Light Theme</a>
+          <a href="#" data-theme="dark">Dark Theme</a>
+        </div>
+      </div>
+      <a href="/automarkett/login.html" class="login-link">Log In</a>
+      <a href="/automarkett/register.html" class="register-link">Register</a>
+      <span class="user-info" style="display:none;">
+        <span class="username"></span>
+        <a href="#" class="logout">Log Out</a>
+      </span>
+    </nav>
+  </header>
+
+  <div class="menu-overlay">
+    <div class="menu-btn">×</div>
+    <nav class="nav-links">
+      <a href="/automarkett/index.html">Home</a>
+      <a href="/automarkett/buy.html">Buy</a>
+      <a href="/automarkett/pardot.html">Sell</a>
+      <a href="/automarkett/about.html">About</a>
+      <div class="dropdown language-switch">
+        <a href="#">Settings</a>
+        <div class="dropdown-content">
+          <a href="#" data-lang="en">English</a>
+          <a href="#" data-lang="ru">Русский</a>
+          <a href="#" data-lang="lv">Latviešu</a>
+        </div>
+      </div>
+      <div class="dropdown theme-switch">
+        <a href="#">Theme</a>
+        <div class="dropdown-content">
+          <a href="#" data-theme="light">Light Theme</a>
+          <a href="#" data-theme="dark">Dark Theme</a>
+        </div>
+      </div>
+      <a href="/automarkett/login.html" class="login-link">Log In</a>
+      <a href="/automarkett/register.html" class="register-link">Register</a>
+      <span class="user-info" style="display:none;">
+        <span class="username"></span>
+        <a href="#" class="logout">Log Out</a>
+      </span>
+    </nav>
+  </div>
+
+  <div class="content">
+    <h1>Welcome to AutoMarkeTT</h1>
+    <p>Find your dream car or sell your vehicle quickly and easily with us!</p>
+    <a href="/automarkett/pardot.html" class="bg-blue-500 text-white p-2 rounded">Sell Now</a>
+
+    <h2>Car Catalog</h2>
+    <div class="filters">
+      <select>
+        <option>Brand</option>
+        <option>All Brands</option>
+      </select>
+      <select>
+        <option>Model</option>
+        <option>All Models</option>
+      </select>
+      <select>
+        <option>Year</option>
+        <option>Any Year</option>
+      </select>
+      <input type="number" placeholder="Price From (€)">
+      <input type="number" placeholder="Price To (€)">
+      <select>
+        <option>Fuel Type</option>
+        <option>All Fuel Types</option>
+        <option>Petrol</option>
+        <option>Diesel</option>
+        <option>Electric</option>
+      </select>
+      <select>
+        <option>Transmission</option>
+        <option>All Transmissions</option>
+        <option>Manual</option>
+        <option>Automatic</option>
+      </select>
+      <select>
+        <option>Body Type</option>
+        <option>All Body Types</option>
+        <option>Sedan</option>
+        <option>SUV</option>
+        <option>Hatchback</option>
+      </select>
+      <button>Search</button>
+    </div>
+    <div>
+      <label>Sort:</label>
+      <select>
+        <option>Default</option>
+        <option>Price: Low to High</option>
+        <option>Price: High to Low</option>
+        <option>Year: Old to New</option>
+        <option>Year: New to Old</option>
+      </select>
+    </div>
+
+    <div class="car-list">
+      <div class="car-card">
+        <img src="https://via.placeholder.com/150" alt="BMW X5">
+        <h3>BMW X5</h3>
+        <p>Year: 2020</p>
+        <p>Fuel: Diesel</p>
+        <p>Transmission: Automatic</p>
+        <p>€45,000</p>
+      </div>
+      <div class="car-card">
+        <img src="https://via.placeholder.com/150" alt="Tesla Model 3">
+        <h3>Tesla Model 3</h3>
+        <p>Year: 2022</p>
+        <p>Fuel: Electric</p>
+        <p>Transmission: Automatic</p>
+        <p>€50,000</p>
+      </div>
+      <div class="car-card">
+        <img src="https://via.placeholder.com/150" alt="Audi A4">
+        <h3>Audi A4</h3>
+        <p>Year: 2019</p>
+        <p>Fuel: Petrol</p>
+        <p>Transmission: Manual</p>
+        <p>€30,000</p>
+      </div>
+    </div>
+    <div class="pagination">
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+    </div>
+
+    <h2>Why Choose Us</h2>
+    <div class="features">
+      <div>
+        <h3>Wide Selection</h3>
+        <p>Choose from a vast range of vehicles to find the perfect match for you.</p>
+      </div>
+      <div>
+        <h3>Trusted Platform</h3>
+        <p>We ensure secure transactions and verified listings for your peace of mind.</p>
+      </div>
+      <div>
+        <h3>24/7 Support</h3>
+        <p>Our team is always here to help you with any questions or issues.</p>
+      </div>
+    </div>
+
+    <h2>What Our Customers Say</h2>
+    <div class="testimonials">
+      <div>
+        <p>"AutoMarkeTT made selling my car so easy! I got a great price and the process was seamless."</p>
+        <p>- John Doe</p>
+      </div>
+      <div>
+        <p>"I found my dream car on AutoMarkeTT. The filters made it so easy to narrow down my search."</p>
+        <p>- Jane Smith</p>
+      </div>
+      <div>
+        <p>"Great platform with excellent customer support. Highly recommend!"</p>
+        <p>- Alex Brown</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div>AutoMarkeTT</div>
+    <p>The best place to buy and sell cars</p>
+    <div>Navigation</div>
+    <div>
+      <a href="/automarkett/index.html">Home</a>
+      <a href="/automarkett/buy.html">Buy</a>
+      <a href="/automarkett/pardot.html">Sell</a>
+      <a href="/automarkett/about.html">About</a>
+    </div>
+    <div>Contacts</div>
+    <div>
+      <p>+371 20000000</p>
+      <p>[email protected]</p>
+    </div>
+    <p>© 2025 AutoMarkeTT. All rights reserved.</p>
+  </footer>
+
+  <script>
+    $(document).ready(function() {
+      $('.menu-btn').click(function() {
+        $('.menu-overlay').toggleClass('active');
+      });
+
+      $('.language-switch a[data-lang], .theme-switch a[data-theme]').click(function(e) {
+        e.preventDefault();
+        const lang = $(this).data('lang');
+        const theme = $(this).data('theme');
+        if (lang) {
+          localStorage.setItem('language', lang);
+          location.reload();
+        }
+        if (theme) {
+          $('html').toggleClass('dark', theme === 'dark');
+          localStorage.setItem('theme', theme);
+        }
+      });
+
+      const savedLang = localStorage.getItem('language') || 'en';
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      if (savedTheme === 'dark') $('html').addClass('dark');
+
+      const user = JSON.parse(localStorage.getItem('user'));
+      if (user) {
+        $('.login-link, .register-link').hide();
+        $('.user-info').show();
+        $('.username').text(user.username);
+      }
+
+      $('.logout').click(function(e) {
+        e.preventDefault();
+        localStorage.removeItem('user');
+        window.location.href = '/automarkett/index.html';
+      });
+    });
+  </script>
+</body>
+</html>

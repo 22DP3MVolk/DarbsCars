@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoMarkeTT - Sell Your Car</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/automarkett/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="main.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/automarkett/index.html" class="text-2xl font-bold">AutoMarkeTT</a>
+    <div class="menu-btn">×</div>
+    <nav class="nav-links">
+      <a href="/automarkett/index.html">Home</a>
+      <a href="/automarkett/buy.html">Buy</a>
+      <a href="/automarkett/pardot.html">Sell</a>
+      <a href="/automarkett/about.html">About</a>
+      <div class="dropdown language-switch">
+        <a href="#">EN</a>
+        <div class="dropdown-content">
+          <a href="#" data-lang="en">English</a>
+          <a href="#" data-lang="ru">Русский</a>
+          <a href="#" data-lang="lv">Latviešu</a>
+        </div>
+      </div>
+      <div class="dropdown theme-switch">
+        <a href="#">Light Theme</a>
+        <div class="dropdown-content">
+          <a href="#" data-theme="light">Light Theme</a>
+          <a href="#" data-theme="dark">Dark Theme</a>
+        </div>
+      </div>
+      <a href="/automarkett/login.html" class="login-link">Log In</a>
+      <a href="/automarkett/register.html" class="register-link">Register</a>
+      <span class="user-info" style="display:none;">
+        <span class="username"></span>
+        <a href="#" class="logout">Log Out</a>
+      </span>
+    </nav>
+  </header>
+
+  <div class="menu-overlay">
+    <div class="menu-btn">×</div>
+    <nav class="nav-links">
+      <a href="/automarkett/index.html">Home</a>
+      <a href="/automarkett/buy.html">Buy</a>
+      <a href="/automarkett/pardot.html">Sell</a>
+      <a href="/automarkett/about.html">About</a>
+      <div class="dropdown language-switch">
+        <a href="#">Settings</a>
+        <div class="dropdown-content">
+          <a href="#" data-lang="en">English</a>
+          <a href="#" data-lang="ru">Русский</a>
+          <a href="#" data-lang="lv">Latviešu</a>
+        </div>
+      </div>
+      <div class="dropdown theme-switch">
+        <a href="#">Theme</a>
+        <div class="dropdown-content">
+          <a href="#" data-theme="light">Light Theme</a>
+          <a href="#" data-theme="dark">Dark Theme</a>
+        </div>
+      </div>
+      <a href="/automarkett/login.html" class="login-link">Log In</a>
+      <a href="/automarkett/register.html" class="register-link">Register</a>
+      <span class="user-info" style="display:none;">
+        <span class="username"></span>
+        <a href="#" class="logout">Log Out</a>
+      </span>
+    </nav>
+  </div>
+
+  <div class="content">
+    <h1>Sell Your Car</h1>
+    <form id="sell-form" enctype="multipart/form-data">
+      <div>
+          <label for="brand">Бренд</label>
+          <input type="text" id="brand" name="brand" required>
+      </div>
+      <div>
+          <label for="model">Модель</label>
+          <input type="text" id="model" name="model" required>
+      </div>
+      <div>
+          <label for="year">Год</label>
+          <input type="number" id="year" name="year" required>
+      </div>
+      <div>
+          <label for="mileage">Пробег (км)</label>
+          <input type="number" id="mileage" name="mileage" required>
+      </div>
+      <div>
+          <label for="fuel">Тип топлива</label>
+          <select id="fuel" name="fuel" required>
+              <option value="">Выберите тип топлива</option>
+              <option value="Petrol">Бензин</option>
+              <option value="Diesel">Дизель</option>
+              <option value="Electric">Электрический</option>
+              <option value="Hybrid">Гибрид</option>
+          </select>
+      </div>
+      <div>
+          <label for="transmission">Трансмиссия</label>
+          <select id="transmission" name="transmission" required>
+              <option value="">Выберите трансмиссию</option>
+              <option value="Manual">Ручная</option>
+              <option value="Automatic">Автомат</option>
+          </select>
+      </div>
+      <div>
+          <label for="price">Цена (€)</label>
+          <input type="number" id="price" name="price" required>
+      </div>
+      <div>
+          <label for="condition">Состояние</label>
+          <select id="condition" name="condition" required>
+              <option value="">Выберите состояние</option>
+              <option value="New">Новый</option>
+              <option value="Used">Б/у</option>
+              <option value="Needs Repair">Требуется ремонт</option>
+          </select>
+      </div>
+      <div>
+          <label for="description">Описание</label>
+          <textarea id="description" name="description"></textarea>
+      </div>
+      <div>
+          <label for="image">Загрузить фото</label>
+          <input type="file" id="image" name="image" accept="image/*" required>
+      </div>
+      <button type="submit">Отправить</button>
+  </form>
+
+    <h2>How to Sell Your Car</h2>
+    <div class="features">
+      <div>
+        <h3>Step 1: Fill Out the Form</h3>
+        <p>Provide details about your car, including brand, model, year, and condition, to create your listing.</p>
+      </div>
+      <div>
+        <h3>Step 2: Upload Photos</h3>
+        <p>Add high-quality photos of your car to attract potential buyers.</p>
+      </div>
+      <div>
+        <h3>Step 3: Submit & Sell</h3>
+        <p>Submit your listing and wait for buyers to contact you. We’ll help you through the process!</p>
+      </div>
+    </div>
+
+    <h2>Why Sell with AutoMarkeTT</h2>
+    <div class="features">
+      <div>
+        <h3>Large Audience</h3>
+        <p>Reach thousands of potential buyers looking for a car like yours.</p>
+      </div>
+      <div>
+        <h3>Secure Transactions</h3>
+        <p>We ensure safe and verified transactions for your peace of mind.</p>
+      </div>
+      <div>
+        <h3>24/7 Support</h3>
+        <p>Our team is here to assist you at every step of the selling process.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div>AutoMarkeTT</div>
+    <p>The best place to buy and sell cars</p>
+    <div>Navigation</div>
+    <div>
+      <a href="/automarkett/index.html">Home</a>
+      <a href="/automarkett/buy.html">Buy</a>
+      <a href="/automarkett/pardot.html">Sell</a>
+      <a href="/automarkett/about.html">About</a>
+    </div>
+    <div>Contacts</div>
+    <div>
+      <p>+371 20000000</p>
+      <p>[email protected]</p>
+    </div>
+    <p>© 2025 AutoMarkeTT. All rights reserved.</p>
+  </footer>
+
+  <script>
+    $(document).ready(function() {
+      $('.menu-btn').click(function() {
+        $('.menu-overlay').toggleClass('active');
+      });
+
+      $('.language-switch a[data-lang], .theme-switch a[data-theme]').click(function(e) {
+        e.preventDefault();
+        const lang = $(this).data('lang');
+        const theme = $(this).data('theme');
+        if (lang) {
+          localStorage.setItem('language', lang);
+          location.reload();
+        }
+        if (theme) {
+          $('html').toggleClass('dark', theme === 'dark');
+          localStorage.setItem('theme', theme);
+        }
+      });
+
+      const savedLang = localStorage.getItem('language') || 'en';
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      if (savedTheme === 'dark') $('html').addClass('dark');
+
+      const user = JSON.parse(localStorage.getItem('user'));
+      if (user) {
+        $('.login-link, .register-link').hide();
+        $('.user-info').show();
+        $('.username').text(user.username);
+      }
+
+      $('.logout').click(function(e) {
+        e.preventDefault();
+        localStorage.removeItem('user');
+        window.location.href = '/automarkett/index.html';
+      });
+
+      $('#add-car-form').submit(function(e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (!user) {
+          alert('Please log in to add a car.');
+          window.location.href = '/automarkett/login.html';
+          return;
+        }
+        formData.append('user', JSON.stringify(user));
+
+        // Логируем данные формы
+        for (let pair of formData.entries()) {
+          console.log(pair[0] + ': ' + pair[1]);
+        }
+
+        $.ajax({
+          url: '/automarkett/add_car.php',
+          method: 'POST',
+          data: formData,
+          processData: false,
+          contentType: false,
+          success: function(response) {
+            console.log('Server response:', response);
+            if (response.success) {
+              alert('Car added successfully!');
+              window.location.href = '/automarkett/buy.html';
+            } else {
+              alert(response.error);
+            }
+          },
+          error: function(xhr, status, error) {
+            console.log('AJAX error:', status, error);
+            alert('Error adding car: ' + error);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

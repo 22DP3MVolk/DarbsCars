@@ -1,0 +1,337 @@
+Array
+(
+    [brand] => Toyota
+    [model] => Camry
+    [year] => 2020
+    [mileage] => 50000
+    [fuel] => Petrol
+    [transmission] => Automatic
+    [price] => 15000
+    [condition] => Used
+    [description] => Mashina v ahoroshem sostoyanii i gotova k prodažE
+Chernij cvEt 
+    [user] => {"id":12,"username":"Max123"}
+)
+
+Array
+(
+    [image] => Array
+        (
+            [name] => camry.jfif
+            [full_path] => camry.jfif
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php8427.tmp
+            [error] => 0
+            [size] => 3843
+        )
+
+)
+
+Array
+(
+    [brand] => Toyota
+    [model] => Camry
+    [year] => 2020
+    [mileage] => 50000
+    [fuel] => Petrol
+    [transmission] => Automatic
+    [price] => 15000
+    [condition] => Used
+    [description] => Mashina v ahoroshem sostoyanii i gotova k prodažE Chernij cvEt
+    [user] => {"id":12,"username":"Max123"}
+)
+
+Array
+(
+    [image] => Array
+        (
+            [name] => camry.jfif
+            [full_path] => camry.jfif
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\phpA25C.tmp
+            [error] => 0
+            [size] => 3843
+        )
+
+)
+
+Array
+(
+    [brand] => Toyota
+    [model] => Camry
+    [year] => 2012
+    [mileage] => 50000
+    [fuel] => Diesel
+    [transmission] => Manual
+    [price] => 15000
+    [condition] => Needs Repair
+    [description] => Хорошая но нужна починка 
+    [user] => {"id":12,"username":"Max123"}
+)
+
+Array
+(
+    [image] => Array
+        (
+            [name] => camry.jfif
+            [full_path] => camry.jfif
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\phpC3D3.tmp
+            [error] => 0
+            [size] => 3843
+        )
+
+)
+
+Array
+(
+    [brand] => Toyota
+    [model] => Camry
+    [year] => 2012
+    [mileage] => 50000
+    [fuel] => Diesel
+    [transmission] => Manual
+    [price] => 15000
+    [condition] => Needs Repair
+    [description] => Хорошая но нужна починка 
+    [user] => {"id":12,"username":"Max123"}
+)
+
+Array
+(
+    [image] => Array
+        (
+            [name] => camry.jfif
+            [full_path] => camry.jfif
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\phpC044.tmp
+            [error] => 0
+            [size] => 3843
+        )
+
+)
+
+Array
+(
+    [brand] => BMW
+    [model] => M5
+    [year] => 2021
+    [mileage] => 50000
+    [fuel] => Diesel
+    [transmission] => Automatic
+    [price] => 150000
+    [condition] => Used
+    [description] => Хорошая но нужна починка 
+    [user] => {"id":12,"username":"Max123"}
+)
+
+Array
+(
+    [image] => Array
+        (
+            [name] => BMWM5.jfif
+            [full_path] => BMWM5.jfif
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\phpD407.tmp
+            [error] => 0
+            [size] => 11177
+        )
+
+)
+
+Array
+(
+    [brand] => BMW
+    [model] => M5
+    [year] => 2021
+    [mileage] => 50000
+    [fuel] => Diesel
+    [transmission] => Automatic
+    [price] => 150000
+    [condition] => Used
+    [description] => Хорошая но нужна починка 
+    [user] => {"id":12,"username":"Max123"}
+)
+
+Array
+(
+    [image] => Array
+        (
+            [name] => BMWM5.jfif
+            [full_path] => BMWM5.jfif
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php61BF.tmp
+            [error] => 0
+            [size] => 11177
+        )
+
+)
+
+Array
+(
+    [brand] => Toyota
+    [model] => Camry
+    [year] => 2
+    [mileage] => 2
+    [fuel] => Petrol
+    [transmission] => Manual
+    [price] => 2
+    [condition] => New
+    [description] => 2
+    [user] => {"id":12,"username":"Max123"}
+)
+
+Array
+(
+    [image] => Array
+        (
+            [name] => BMWM5.jfif
+            [full_path] => BMWM5.jfif
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\phpAA81.tmp
+            [error] => 0
+            [size] => 11177
+        )
+
+)
+
+Array
+(
+    [brand] => Toyota
+    [model] => Camry
+    [year] => 2
+    [mileage] => 2
+    [fuel] => Petrol
+    [transmission] => Manual
+    [price] => 2
+    [condition] => New
+    [description] => 2
+    [user] => {"id":12,"username":"Max123"}
+)
+
+Array
+(
+    [image] => Array
+        (
+            [name] => BMWM5.jfif
+            [full_path] => BMWM5.jfif
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\phpC43C.tmp
+            [error] => 0
+            [size] => 11177
+        )
+
+)
+
+Array
+(
+    [brand] => BMW
+    [model] => M5
+    [year] => 2021
+    [mileage] => 50000
+    [fuel] => Diesel
+    [transmission] => Manual
+    [price] => 21000
+    [condition] => New
+    [description] => New wow
+    [user] => {"id":12,"username":"Max123"}
+)
+
+Array
+(
+    [image] => Array
+        (
+            [name] => BMWM5.jfif
+            [full_path] => BMWM5.jfif
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php68BA.tmp
+            [error] => 0
+            [size] => 11177
+        )
+
+)
+
+Array
+(
+    [brand] => BMW
+    [model] => M5
+    [year] => 2021
+    [mileage] => 50000
+    [fuel] => Petrol
+    [transmission] => Manual
+    [price] => 21000
+    [condition] => New
+    [description] => 123215
+    [user] => {"id":1,"username":"mv007"}
+)
+
+Array
+(
+    [image] => Array
+        (
+            [name] => BMWM5.jfif
+            [full_path] => BMWM5.jfif
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\phpA27.tmp
+            [error] => 0
+            [size] => 11177
+        )
+
+)
+
+Array
+(
+    [brand] => Toyota
+    [model] => Camry
+    [year] => 2020
+    [mileage] => 50000
+    [fuel] => Diesel
+    [transmission] => Manual
+    [price] => 15000
+    [condition] => New
+    [description] => good car
+    [user] => {"id":1,"username":"mv007"}
+)
+
+Array
+(
+    [image] => Array
+        (
+            [name] => oskar.jpg
+            [full_path] => oskar.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\phpBD56.tmp
+            [error] => 0
+            [size] => 7948
+        )
+
+)
+
+Array
+(
+    [brand] => Toyota
+    [model] => Camry
+    [year] => 2020
+    [mileage] => 50000
+    [fuel] => Diesel
+    [transmission] => Manual
+    [price] => 15000
+    [condition] => New
+    [description] => good car
+    [user] => {"id":1,"username":"mv007"}
+)
+
+Array
+(
+    [image] => Array
+        (
+            [name] => oskar.jpg
+            [full_path] => oskar.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php6DE5.tmp
+            [error] => 0
+            [size] => 7948
+        )
+
+)
+

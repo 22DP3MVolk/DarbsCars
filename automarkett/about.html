@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoMarkeTT - About</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/automarkett/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="/automarkett/index.html" class="text-2xl font-bold">AutoMarkeTT</a>
+    <div class="menu-btn">×</div>
+    <nav class="nav-links">
+      <a href="/automarkett/index.html">Home</a>
+      <a href="/automarkett/buy.html">Buy</a>
+      <a href="/automarkett/pardot.html">Sell</a>
+      <a href="/automarkett/about.html">About</a>
+      <div class="dropdown language-switch">
+        <a href="#">EN</a>
+        <div class="dropdown-content">
+          <a href="#" data-lang="en">English</a>
+          <a href="#" data-lang="ru">Русский</a>
+          <a href="#" data-lang="lv">Latviešu</a>
+        </div>
+      </div>
+      <div class="dropdown theme-switch">
+        <a href="#">Light Theme</a>
+        <div class="dropdown-content">
+          <a href="#" data-theme="light">Light Theme</a>
+          <a href="#" data-theme="dark">Dark Theme</a>
+        </div>
+      </div>
+      <a href="/automarkett/login.html" class="login-link">Log In</a>
+      <a href="/automarkett/register.html" class="register-link">Register</a>
+      <span class="user-info" style="display:none;">
+        <span class="username"></span>
+        <a href="#" class="logout">Log Out</a>
+      </span>
+    </nav>
+  </header>
+
+  <div class="menu-overlay">
+    <div class="menu-btn">×</div>
+    <nav class="nav-links">
+      <a href="/automarkett/index.html">Home</a>
+      <a href="/automarkett/buy.html">Buy</a>
+      <a href="/automarkett/pardot.html">Sell</a>
+      <a href="/automarkett/about.html">About</a>
+      <div class="dropdown language-switch">
+        <a href="#">Settings</a>
+        <div class="dropdown-content">
+          <a href="#" data-lang="en">English</a>
+          <a href="#" data-lang="ru">Русский</a>
+          <a href="#" data-lang="lv">Latviešu</a>
+        </div>
+      </div>
+      <div class="dropdown theme-switch">
+        <a href="#">Theme</a>
+        <div class="dropdown-content">
+          <a href="#" data-theme="light">Light Theme</a>
+          <a href="#" data-theme="dark">Dark Theme</a>
+        </div>
+      </div>
+      <a href="/automarkett/login.html" class="login-link">Log In</a>
+      <a href="/automarkett/register.html" class="register-link">Register</a>
+      <span class="user-info" style="display:none;">
+        <span class="username"></span>
+        <a href="#" class="logout">Log Out</a>
+      </span>
+    </nav>
+  </div>
+
+  <div class="content">
+    <h1>About Us</h1>
+    <p>AutoMarkeTT is a leading platform for buying and selling cars. We aim to provide a seamless experience for both buyers and sellers, ensuring transparency, security, and ease of use.</p>
+    <p>Our mission is to connect car enthusiasts with their dream vehicles while offering a trusted environment for transactions.</p>
+
+    <h2>Our Team</h2>
+    <div class="features">
+      <div>
+        <h3>John Doe</h3>
+        <p>CEO & Founder</p>
+      </div>
+      <div>
+        <h3>Jane Smith</h3>
+        <p>Chief Technology Officer</p>
+      </div>
+      <div>
+        <h3>Alex Brown</h3>
+        <p>Chief Marketing Officer</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div>AutoMarkeTT</div>
+    <p>The best place to buy and sell cars</p>
+    <div>Navigation</div>
+    <div>
+      <a href="/automarkett/index.html">Home</a>
+      <a href="/automarkett/buy.html">Buy</a>
+      <a href="/automarkett/pardot.html">Sell</a>
+      <a href="/automarkett/about.html">About</a>
+    </div>
+    <div>Contacts</div>
+    <div>
+      <p>+371 20000000</p>
+      <p>[email protected]</p>
+    </div>
+    <p>© 2025 AutoMarkeTT. All rights reserved.</p>
+  </footer>
+
+  <script>
+    $(document).ready(function() {
+      $('.menu-btn').click(function() {
+        $('.menu-overlay').toggleClass('active');
+      });
+
+      $('.language-switch a[data-lang], .theme-switch a[data-theme]').click(function(e) {
+        e.preventDefault();
+        const lang = $(this).data('lang');
+        const theme = $(this).data('theme');
+        if (lang) {
+          localStorage.setItem('language', lang);
+          location.reload();
+        }
+        if (theme) {
+          $('html').toggleClass('dark', theme === 'dark');
+          localStorage.setItem('theme', theme);
+        }
+      });
+
+      const savedLang = localStorage.getItem('language') || 'en';
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      if (savedTheme === 'dark') $('html').addClass('dark');
+
+      const user = JSON.parse(localStorage.getItem('user'));
+      if (user) {
+        $('.login-link, .register-link').hide();
+        $('.user-info').show();
+        $('.username').text(user.username);
+      }
+
+      $('.logout').click(function(e) {
+        e.preventDefault();
+        localStorage.removeItem('user');
+        window.location.href = '/automarkett/index.html';
+      });
+    });
+  </script>
+</body>
+</html>

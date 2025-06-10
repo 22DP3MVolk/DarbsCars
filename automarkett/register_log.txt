@@ -1,0 +1,30 @@
+Request received at 2025-06-09 12:38:14
+Raw POST data: {"first_name":"Alex","last_name":"Smith","username":"AiSmith","email":"alex@example.com","phone":"+37129532732","password":"123456","confirm_password":"123456","terms":"on"}
+Decoded data: Array
+(
+    [first_name] => Alex
+    [last_name] => Smith
+    [username] => AiSmith
+    [email] => alex@example.com
+    [phone] => +37129532732
+    [password] => 123456
+    [confirm_password] => 123456
+    [terms] => on
+)
+
+Registration successful for user: AiSmith (ID: 11)
+Request received at 2025-06-09 12:40:20
+Raw POST data: {"first_name":"Maxim","last_name":"Volkov","username":"Max123","email":"Max123@gmail.com","phone":"+37129532732","password":"123Mv","confirm_password":"123Mv","terms":"on"}
+Decoded data: Array
+(
+    [first_name] => Maxim
+    [last_name] => Volkov
+    [username] => Max123
+    [email] => Max123@gmail.com
+    [phone] => +37129532732
+    [password] => 123Mv
+    [confirm_password] => 123Mv
+    [terms] => on
+)
+
+Registration successful for user: Max123 (ID: 12)
